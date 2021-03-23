@@ -1,0 +1,34 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1671
+{\fonttbl\f0\fnil\fcharset0 HelveticaNeue;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+{\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc0\levelnfcn0\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{decimal\}.}{\leveltext\leveltemplateid1\'02\'00.;}{\levelnumbers\'01;}\fi-360\li720\lin720 }{\listname ;}\listid1}
+{\list\listtemplateid2\listhybrid{\listlevel\levelnfc0\levelnfcn0\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{decimal\}.}{\leveltext\leveltemplateid101\'02\'00.;}{\levelnumbers\'01;}\fi-360\li720\lin720 }{\listname ;}\listid2}
+{\list\listtemplateid3\listhybrid{\listlevel\levelnfc0\levelnfcn0\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{decimal\}.}{\leveltext\leveltemplateid201\'02\'00.;}{\levelnumbers\'01;}\fi-360\li720\lin720 }{\listname ;}\listid3}}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}{\listoverride\listid2\listoverridecount0\ls2}{\listoverride\listid3\listoverridecount0\ls3}}
+\paperw11900\paperh16840\margl1440\margr1440\vieww28600\viewh18000\viewkind0
+\deftab560
+\pard\pardeftab560\slleading20\partightenfactor0
+
+\f0\fs24 \cf0 Tasks to be done by November 30th, 2019 :-\uc0\u8232 \u8232 \u8232 A. DB Tables needed to be created :-\
+\
+\pard\pardeftab560\pardirnatural\partightenfactor0
+\ls1\ilvl0\cf0 {\listtext	0.	}User -> user_id, user_name, user_age, user_sex, user_photos, user_bio, user_location_lat, user_location_long, user_pets[array] -> \{linked to\} -> user\'92s specific pet (Point no 2)\
+\ls1\ilvl0{\listtext	0.	}Pet -> pet_id, pet_name, pet_age, pet_breed, pet_sex, pet_photos, pet_bio, pet_matches_ids[array of ids who matched to this pet], pet_user_id (This is the owner\'92s user id - Point no 1)\
+\pard\pardeftab560\slleading20\partightenfactor0
+\cf0 \uc0\u8232 \u8232 B. APIs needed :-\
+\pard\pardeftab560\slleading20\pardirnatural\partightenfactor0
+\cf0 \
+\pard\pardeftab560\pardirnatural\partightenfactor0
+\ls2\ilvl0\cf0 {\listtext	0.	}User Profile updation -> Request Params \{user_name, user_birthday, user_sex, user_profile_image, user_social_id, timestamp\} -> Response Params \{user_id, success : true/false\}\
+\ls2\ilvl0{\listtext	0.	}User Pet Profile updation -> Request Params \{pet_name, pet_birthday, pet_profile_image, pet_breed, pet_sex, user_id, timestamp\} -> Response Params \{pet_id, success : true/false\}\
+\ls2\ilvl0{\listtext	0.	}API to view Profile -> Request Params \{user_id\} -> Response Params \{user_name, user_birthday, user_sex, user_profile_image, user_social_id, user_pets [pet_name, pet_birthday, pet_profile_image, pet_breed, pet_sex, pet_id], success : true/false\}\
+\ls2\ilvl0{\listtext	0.	}To get all play dates -> play_dates [ \{pet_id, pet_name, pet_age, pet_breed, pet_sex, pet_photos, pet_bio\} ]\
+\ls2\ilvl0{\listtext	0.	}API to LIKE a pet -> Request Params \{user_id, timestamp\} -> Response Params \{success : true/false\}\uc0\u8232 \
+\pard\pardeftab560\slleading20\partightenfactor0
+\cf0 \
+C. Fixes\uc0\u8232 \
+\pard\pardeftab560\pardirnatural\partightenfactor0
+\ls3\ilvl0\cf0 {\listtext	1.	}Test Questionnaires API if working fine or not\
+\ls3\ilvl0{\listtext	2.	}Pagination in Adoption API\
+}

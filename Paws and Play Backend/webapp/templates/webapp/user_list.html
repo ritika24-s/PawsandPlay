@@ -1,0 +1,56 @@
+﻿{% extends "webapp/base.html" %}
+{% block content %}
+    {% for request in adoption_request %}
+<article class="media content-section">
+    <img class="rounded-circle article-img" src="{{ request.user.user_profile_pic }}">
+    <div class="media-body">
+        <div class="article-metadata">
+            <a class="article-content" href="{% url 'adoption:userdetail' request.question.id %}">{{ request.user.user_first_name }}</a>
+            <!--<small class="text-muted">{{ request.user.user_last_name }}</small>-->
+            {% if request.application_status == 1 %}
+            <p class="article-content">Shortlisted</p>
+
+            {% endif %}
+
+            {% if request.application_status == 2 %}
+            <p class="article-content">Rejected</p>
+
+            {% endif %}
+
+            {% if request.application_status == 3 %}
+            <p class="article-content">Pending</p>
+
+            {% endif %}
+            <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{% url 'adoption:changestatus' request.id %}">Change</a>
+
+
+
+            <!--{% if request.application_status == 1 %}
+    <select>
+        <option>Shortlisted</option>
+        <option>Pending</option>
+        <option>Rejected</option>
+    </select>
+    {% endif %}
+
+    {% if request.application_status == 2 %}
+    <select>
+        <option>Rejected</option>
+        <option>Pending</option>
+        <option>Shortlisted</option>
+    </select>
+    {% endif %}
+
+    {% if request.application_status == 3 %}
+    <select>
+        <option>Pending</option>
+        <option>Shortlisted</option>
+        <option>Rejected</option>
+    </select>
+    {% endif %}-->
+        </div>
+        <p class="article-content">{{ request.user.user_email_id }}</p>
+    </div>
+</article>
+        {% endfor %}
+    {% endblock content %}

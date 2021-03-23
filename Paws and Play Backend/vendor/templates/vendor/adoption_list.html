@@ -1,0 +1,25 @@
+﻿{% extends "vendor/base.html" %}
+{% block content %}
+
+<div class='col-sm-6 col-sm-offset-3'>
+    <h1>{{ title }}</h1>
+    {% for obj in adoption_list %}
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="thumbnail">
+                {% if obj.image %}
+                <img src='{{ obj.pet_images.url }}' class='img-responsive' />
+                {% endif %}
+                <div class="caption">
+                    <h3><a href='{{ obj.get_absolute_url }}'>{{ obj.pet_name }}</a> <small>{{ obj.pet_type}} </small></h3>
+                    <p><a href="{{ obj.get_absolute_url }}" class="btn btn-primary" role="button">View</a></p>
+                </div>
+            </div>
+        </div>
+        <hr />
+    </div>
+    {% endfor %}
+
+</div>
+
+{% endblock content %}

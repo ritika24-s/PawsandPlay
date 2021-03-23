@@ -1,0 +1,17 @@
+﻿{% extends "webapp/base.html" %}
+{% block content %}
+    {% for adoption in adoption %}
+<article class="media content-section">
+    <img class="rounded-circle article-img" src="{{adoption.pet_images_url}}">
+    <div class="media-body">
+        <div class="article-metadata">
+            <a class="mr-2" href="#">{{ adoption.pet_type }}</a>
+            <!--<small class="text-muted">{{ adoption.vendor_timestamp|date:"F d, Y" }}</small>-->
+        </div>
+        <h2><a class="article-content" href="{% url 'adoption:detail' adoption.pet_id %}">{{ adoption.pet_name }}</a></h2>
+        <p class="article-content">{{ adoption.pet_breed }}</p>
+        <p class="article-content">{{ adoption.pet_bio }}</p>
+    </div>
+</article>
+    {% endfor %}
+{% endblock content %}

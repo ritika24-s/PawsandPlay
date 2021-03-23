@@ -1,0 +1,24 @@
+Start your app by -
+
+pip install django
+python -m django --version
+python --version
+django-admin
+django-admin startproject<name of the project>
+python manage.py migrate
+python manage.py createsuperuser
+python manage.py startapp <name of the app>
+
+
+
+pip install djangorestframework-jwt
+pip install django-phone-field
+pip install Pillow
+python -m pip install --upgrade pip
+pip install django-import-export
+python manage.py changepassword ritika
+pip install social-auth-app-django
+pip install django-allauth
+pip install django-crispy-forms
+pip install pillow
+pip install django-filter

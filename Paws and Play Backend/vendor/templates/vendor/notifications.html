@@ -1,0 +1,19 @@
+﻿{% extends "vendor/base.html" %}
+{% block content %}
+    {% for object in adoption_request %}
+<article class="media content-section">
+    <img class="rounded-circle article-img" src="{{ object.user.user_profile_pic }}">
+    <div class="media-body">
+        <div class="article-metadata">
+            <p>
+                <a class="mr-2" href="{% url 'adoption:userdetail' object.question.id %}">{{ object.user.user_first_name }}</a>
+                has opted to adopt
+                <a class="mr-2" href="{% url 'adoption:detail' object.pet.pet_id %}">{{ object.pet.pet_name }}</a>
+            </p>
+            <small class="text-muted">{{ object.requested_at|date:"F d, Y" }}</small>
+            <p></p><a class="btn btn-secondary btn-sm mt-1 mb-1" href="{% url 'adoption:changestatus' object.id %}">Change Status</a></p>
+        </div>
+    </div>
+</article>
+    {% endfor %}
+{% endblock content %}

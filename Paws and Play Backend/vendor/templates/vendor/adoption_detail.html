@@ -1,0 +1,18 @@
+﻿{% extends "vendor/base.html" %}
+
+
+{% block head_title %}
+{{ instance.title }} | {{ block.super }}
+{% endblock head_title %}
+
+
+
+{% block content %}
+<div class='col-sm-6 col-sm-offset-3'>
+    {% if instance.image %}
+    <img src='{{ instance.pet_images.url }}' class='img-responsive' />
+    {% endif %}
+    <h1>{{ title }} <small>{{ instance.pet_type }}</small></h1>
+</div>
+
+{% endblock content %}
